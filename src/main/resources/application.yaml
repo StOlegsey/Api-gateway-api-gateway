@@ -1,0 +1,32 @@
+spring:
+#  application:
+#    name: gateway-service
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: bills-api
+#          predicates:
+#            - Path=/bills-api/
+#          uri: localhost:8081
+#        - id: ticket-generator
+#          predicates:
+#            - Path=/ticket-generator/
+#          uri: localhost:8082
+
+  main:
+    web-application-type: reactive
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.springframework.web.HttpLogging: TRACE
+    reactor.netty.http.server: DEBUG
+    reactor.netty.http.client: DEBUG
+
+server:
+  port: 8080
+
